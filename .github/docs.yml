@@ -44,14 +44,14 @@ jobs:
 
     needs: build
 
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: ${{ github.ref == 'refs/heads/dev' }}
 
     steps:
       # Update the Microfrontends to reflect what we have in the Working branch
       - uses: garygrossgarten/github-action-ssh@release
         name: Run the Update Next Site Script
         with:
-          command: cd /usr/share/tomcat/microfrontends/ohri_docs && sh update_docs.sh
+          command: cd /usr/share/tomcat/microfrontends/ohri_docs && sh deploy_docs.sh
           host: ${{ secrets.HISTAC_HOST }}
           username: ${{ secrets.HISTAC_USERNAME }}
           privateKey: ${{ secrets.HISTAC_KEY}}
