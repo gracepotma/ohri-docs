@@ -51,7 +51,7 @@ jobs:
         uses: appleboy/scp-action@v0.1.4
         with:
           source: .github/deploy_docs.sh
-          targe: /usr/share/tomcat/microfrontends/
+          target: /usr/share/tomcat/microfrontends/
           host: ${{ secrets.HISTAC_HOST }}
           username: ${{ secrets.HISTAC_USERNAME }}
           key: ${{ secrets.HISTAC_OHRI_KEY}}
