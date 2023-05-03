@@ -49,9 +49,10 @@ jobs:
     steps:
       # Update the Microfrontends to reflect what we have in the Working branch
       - uses: garygrossgarten/github-action-ssh@release
-        name: Run the Update Next Site Script
+        name: BackUp and Run the Update DOCS Site Script
         with:
-          command: cd /usr/share/tomcat/microfrontends/ohri_docs && sh deploy_docs.sh
+          command: cd /usr/share/tomcat/microfrontends/
+            sh deploy-ohri-docs.sh
           host: ${{ secrets.HISTAC_HOST }}
           username: ${{ secrets.HISTAC_USERNAME }}
           privateKey: ${{ secrets.HISTAC_KEY}}
