@@ -69,7 +69,7 @@ jobs:
       - uses: garygrossgarten/github-action-ssh@release
         name: BackUp and Run the Update DOCS Site Script
         with:
-          command: cd /usr/share/tomcat/microfrontends/ohri-docs && sh deploy_docs.sh
+          command: cd /usr/share/tomcat/microfrontends/ohri-docs/.github && sh deploy_docs.sh
           host: ${{ secrets.HISTAC_HOST }}
           username: ${{ secrets.HISTAC_USERNAME }}
           privateKey: ${{ secrets.HISTAC_OHRI_KEY}}
