@@ -48,13 +48,13 @@ jobs:
       - run: ls -la .github/
 
       - name: Copy Branch Dev Import Map to remote
-        uses: garygrossgarten/github-action-scp@release
+        uses: appleboy/scp-action@v0.1.4
         with:
-          local: .github/deploy_docs.sh
+          source: .github/deploy_docs.sh
           remote: /usr/share/tomcat/microfrontends/
           host: ${{ secrets.HISTAC_HOST }}
           username: ${{ secrets.HISTAC_USERNAME }}
-          privateKey: ${{ secrets.HISTAC_OHRI_KEY}}
+          key: ${{ secrets.HISTAC_OHRI_KEY}}
           port: ${{ secrets.HISTAC_PORT }}
 
   docs_deployment:
