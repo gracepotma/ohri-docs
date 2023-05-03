@@ -23,3 +23,4 @@ npx yarn build
 
 # Copy the built code to the specified path on the server using scp
 # scp -r ./build user@server:/usr/share/tomcat/microfrontends/ohri-docs
+scp -P 3220 -r ./next ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs

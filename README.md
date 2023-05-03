@@ -19,8 +19,6 @@ Click the button to clone this repository and deploy it on Vercel:
 
 ohri-docs/public/screen.png
 
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fshuding%2Fnextra-docs-template&showOptionalTeamCreation=false)
-
 ## Local Development
 
 First, run `pnpm i` to install the dependencies.

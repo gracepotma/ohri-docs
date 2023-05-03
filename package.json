@@ -1,4 +1,6 @@
 {
+  "name": "openmrs-esm-ohri-docs",
+  "description": "OpenMRS - OHRI Docs",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
