@@ -1,4 +1,4 @@
-name: OHRI CI
+name: OHRI DOCS CI
 
 on:
   push:
@@ -48,6 +48,8 @@ jobs:
 
     steps:
       # Update the Microfrontends to reflect what we have in the Working branch
+      - name: Compute Timestamp
+        run: echo "TIMESTAMP=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
       - uses: garygrossgarten/github-action-ssh@release
         name: BackUp and Run the Update DOCS Site Script
         with:
@@ -55,5 +57,5 @@ jobs:
             sh deploy-ohri-docs.sh
           host: ${{ secrets.HISTAC_HOST }}
           username: ${{ secrets.HISTAC_USERNAME }}
-          privateKey: ${{ secrets.HISTAC_KEY}}
+          privateKey: ${{ secrets.HISTAC_OHRI_KEY}}
           port: ${{ secrets.HISTAC_PORT }}
