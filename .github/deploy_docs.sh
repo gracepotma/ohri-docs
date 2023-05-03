@@ -10,7 +10,7 @@ else
 fi
 
 # Clone the repository with the reference branch named dev
-git --branch dev https://github.com/UCSF-IGHS/ohri-docs.git
+git clone --branch dev https://github.com/UCSF-IGHS/ohri-docs.git
 
 # Navigate into the cloned directory
 echo "--- Navigate into the cloned directory ---"
