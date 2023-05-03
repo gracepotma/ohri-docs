@@ -39,6 +39,30 @@ jobs:
       - name: Run build
         run: yarn build
 
+  update_config:
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    if: ${{ github.ref == 'refs/heads/dev' }}
+
+    steps:
+      - name: Checkout repo to make config folder local
+        uses: actions/checkout@v3
+        with:
+          ref: dev
+      - run: ls -la
+
+      - name: Copy Branch Dev Import Map to remote
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ohri-docs/.github/deploy_docs.sh
+          remote: /usr/share/tomcat/microfrontends/
+          host: ${{ secrets.HISTAC_HOST }}
+          username: ${{ secrets.HISTAC_USERNAME }}
+          privateKey: ${{ secrets.HISTAC_OHRI_KEY}}
+          port: ${{ secrets.HISTAC_PORT }}
+
   docs_deployment:
     runs-on: ubuntu-latest
 
