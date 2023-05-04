@@ -15,11 +15,14 @@ git clone --branch dev https://github.com/UCSF-IGHS/ohri-docs.git
 # Navigate into the cloned directory
 echo "--- Navigate into the cloned directory ---"
 cd ohri-docs
+ls -la -t
 
 # Install dependencies and build the code
 echo "--- Installing dependencies and building the code ---"
 npx yarn install
 npx yarn build
+
+ls -la -t
 
 # Copy the built code to the specified path on the server using scp
 # scp -r ./build user@server:/usr/share/tomcat/microfrontends/ohri-docs
