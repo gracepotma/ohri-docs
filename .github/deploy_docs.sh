@@ -26,4 +26,6 @@ ls -la -t
 
 # Copy the built code to the specified path on the server using scp
 # scp -r ./build user@server:/usr/share/tomcat/microfrontends/ohri-docs
-scp -P 3220 -r ./next ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs
+scp -P 3220 -r .next ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs
+
+# scp -P 3220 -i /usr/local/ohridocs/.ssh/id_rsa -r .next ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs
