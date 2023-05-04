@@ -30,7 +30,7 @@ ls -la -t
 # scp -P 3220 -r .next ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs
 
 echo "--- Copy Hiddne folder .next to build folder to allow transfer to another server ---"
-cp -R .next build
+cp -R .next/ build
 
 scp -P 3220 -r build ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs
 
