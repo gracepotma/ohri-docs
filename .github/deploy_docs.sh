@@ -15,6 +15,7 @@ git clone --branch dev https://github.com/UCSF-IGHS/ohri-docs.git
 
 # Navigate into the cloned directory
 echo "--- Navigate into the cloned directory ---"
+chown -R
 cd ohri-docs
 ls -la -t
 
@@ -29,9 +30,13 @@ ls -la -t
 # scp -r ./build user@server:/usr/share/tomcat/microfrontends/ohri-docs
 # scp -P 3220 -r .next ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs
 
-echo "--- Copy Hiddne folder .next to build folder to allow transfer to another server ---"
+echo "--- Copy Hidden folder .next to build folder to allow transfer to another server ---"
+zip -r next_deploy.zip .next/
 cp -R .next/* build
 
+ls -la -t
+
 scp -P 3220 -r build ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs
+scp -P 3220 -r next_deploy.zip ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs
 
 # scp -P 3220 -i /usr/local/ohridocs/.ssh/id_rsa -r .next ohridocs@reports.globalhealthapp.net:/usr/share/tomcat/microfrontends/ohri_docs
