@@ -1,6 +1,6 @@
-# Form Development in OHRI
+# Form Development in OpenMRS 3
 
-While developing forms in OHRI, we use JSON to accomplish this. JSON is "self-describing" and easy to understand. Here, we shall look at the basic JSON syntax, their meanings and use case and a detail of the validations we add to OHRI forms to improve form behaviour.
+While developing forms in OpenMRS 3 (O3), we use JSON to accomplish this. JSON is "self-describing" and easy to understand. Here, we shall look at the basic JSON syntax, their meanings and use case and a detail of the validations we add to O3 forms to improve form behaviour.
 
 ## Syntax expressions used in form schemas
 
@@ -22,7 +22,7 @@ While developing forms in OHRI, we use JSON to accomplish this. JSON is "self-de
 
 ## Expressions
 
-Expressions are used to add validations and behaviours to OHRI forms. We have two expressions while adding validations to questions/fields in OHRI forms i.e. `hideWhenExpression` is used to hide questions/fields and the `failsWhenExpression` added as part of the form validators for any questions that should throw an error within the form to avoid it from saving if the expressions are not met rightly usually used for dates.
+Expressions are used to add validations and behaviours to O3 forms. We have two expressions while adding validations to questions/fields in O3 forms i.e. `hideWhenExpression` is used to hide questions/fields and the `failsWhenExpression` added as part of the form validators for any questions that should throw an error within the form to avoid it from saving if the expressions are not met rightly usually used for dates.
 
 ## Key points
 
@@ -56,7 +56,7 @@ Expressions are used to add validations and behaviours to OHRI forms. We have tw
     "allowUnspecifiedAll": true
   ```
 
-Below are selected scenarios to give a gist of how behaviours are used in OHRI forms and can be used as a guide to achieve desired behaviours for specific questions within the said forms.
+Below are selected scenarios to give a gist of how behaviours are used in O3 forms and can be used as a guide to achieve desired behaviours for specific questions within the said forms.
 
 1. `isDateBefore(myValue, '1980-01-01')` - This is used in a `failsWhenExpression` and would mean that if the date is before the value 1980-01-01, what ever question behaviour this expression is on should throw and error and not save. (`isDateBefore` is a REACT method and so can be used anywhere and everywhere in any form JSON while declaring this kind of validation)
 
